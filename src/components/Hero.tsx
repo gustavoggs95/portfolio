@@ -8,9 +8,12 @@ import {
 } from 'react-icons/si'
 import { HiDevicePhoneMobile } from 'react-icons/hi2'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import profileImage from '../assets/profile-1.jpg'
 
 export function Hero() {
+  const [imageLoaded, setImageLoaded] = useState(false)
+
   return (
     <section
       id="home"
@@ -51,11 +54,17 @@ export function Hero() {
               </div>
 
               <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm mx-auto lg:mx-0">
-                <div className="relative mb-6 overflow-hidden rounded-2xl">
+                <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[3/4] bg-gray-200">
+                  {!imageLoaded && (
+                    <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200"></div>
+                  )}
                   <img
                     src={profileImage}
                     alt="Gustavo Almeida"
-                    className="relative w-full h-auto object-cover"
+                    className={`relative w-full h-full object-cover transition-opacity duration-300 ${
+                      imageLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    onLoad={() => setImageLoaded(true)}
                   />
                 </div>
 
