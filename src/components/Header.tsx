@@ -30,7 +30,6 @@ export function Header() {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-center">
-          {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -44,7 +43,6 @@ export function Header() {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-text-muted hover:text-primary transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -54,7 +52,6 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <ul className="md:hidden mt-4 pb-4 flex flex-col gap-4">
             {navLinks.map((link) => (

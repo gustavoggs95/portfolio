@@ -89,7 +89,6 @@ export function Experience() {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-primary via-secondary to-primary" />
 
             {experiences.map((exp, index) => (
@@ -103,10 +102,8 @@ export function Experience() {
                   index % 2 === 0 ? 'md:flex-row-reverse' : ''
                 }`}
               >
-                {/* Timeline dot */}
                 <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-dark z-10" />
 
-                {/* Content */}
                 <div className="ml-8 md:ml-0 md:w-1/2 md:px-8">
                   <div className="bg-dark-light p-6 rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300">
                     <div className="flex items-center gap-3 mb-2">

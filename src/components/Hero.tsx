@@ -16,12 +16,9 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden py-20"
     >
-      {/* Modern Grid Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark">
-        {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 animate-gradient"></div>
 
-        {/* Grid pattern */}
         <div className="absolute inset-0 opacity-40">
           <div
             className="h-full w-full"
@@ -35,14 +32,12 @@ export function Hero() {
           />
         </div>
 
-        {/* Glowing orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/40 rounded-full filter blur-[120px]"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/40 rounded-full filter blur-[120px]"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
-          {/* Profile Card - Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -50,15 +45,12 @@ export function Hero() {
             className="w-full lg:w-[400px] flex-shrink-0"
           >
             <div className="relative">
-              {/* Decorative dotted line */}
               <div className="absolute top-[280px] left-[50%] w-0.5 h-24 border-l-2 border-dashed border-primary/40 -translate-x-1/2 hidden lg:block"></div>
               <div className="absolute top-[400px] left-[50%] w-8 h-8 -translate-x-1/2 bg-primary/20 rounded-full flex items-center justify-center hidden lg:block">
                 <Code2 size={16} className="text-primary" />
               </div>
 
-              {/* Card */}
               <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm mx-auto lg:mx-0">
-                {/* Profile Image */}
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
                   <img
                     src={profileImage}
@@ -67,18 +59,15 @@ export function Hero() {
                   />
                 </div>
 
-                {/* Name */}
                 <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
                   Gustavo Almeida
                 </h2>
 
-                {/* Description */}
                 <p className="text-gray-600 text-sm text-center mb-6 leading-relaxed">
                   Senior Software Engineer who has developed countless innovative solutions across
                   web, mobile, and cloud platforms.
                 </p>
 
-                {/* Social Links */}
                 <div className="flex justify-center gap-4">
                   <a
                     href="https://github.com/gustavoggs95"
@@ -110,14 +99,12 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Content - Right Side */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex-1 space-y-12"
           >
-            {/* Title */}
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase leading-none mb-6">
                 <span className="text-white">FULL STACK</span>
@@ -130,7 +117,6 @@ export function Hero() {
               </p>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-4 md:gap-6">
               <div>
                 <div className="text-4xl md:text-5xl font-bold text-white mb-2">+10</div>
@@ -158,7 +144,6 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Skill Cards */}
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="relative group bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 p-6 md:p-8 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>

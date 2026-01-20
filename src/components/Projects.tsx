@@ -66,7 +66,6 @@ export function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-dark-light rounded-xl overflow-hidden border border-dark-lighter hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
             >
-              {/* Project Icon Header */}
               <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:scale-110 transition-transform duration-500" />
                 <project.icon
