@@ -56,7 +56,7 @@ const experiences: ExperienceItem[] = [
     company: 'FATEC de Americana',
     location: 'São Paulo, Brazil',
     period: '2013 - 2016',
-    description: ['Análise e Desenvolvimento de Sistemas (Systems Analysis and Development)'],
+    description: ['Systems Analysis and Development'],
   },
 ]
 

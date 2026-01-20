@@ -29,9 +29,6 @@ yarn dev
 
 # Build for production
 yarn build
-
-# Preview production build
-yarn preview
 ```
 
 ## 🛠️ Scripts
@@ -62,10 +59,3 @@ src/
 └── index.css
 ```
 
-## 🌐 Deployment
-
-This project is configured for deployment on Vercel. Simply connect your GitHub repository to Vercel for automatic deployments.
-
-## 📄 License
-
-MIT License

@@ -40,19 +40,17 @@ body {
   @apply bg-primary;
 }
 
-@keyframes gradient-xy {
+@keyframes gradient {
   0%, 100% {
-    background-size: 400% 400%;
-    background-position: 0% 50%;
+    opacity: 1;
   }
   50% {
-    background-size: 200% 200%;
-    background-position: 100% 50%;
+    opacity: 0.5;
   }
 }
 
-.animate-gradient-xy {
-  animation: gradient-xy 3s ease infinite;
+.animate-gradient {
+  animation: gradient 8s ease-in-out infinite;
 }
 
 @keyframes blob {

@@ -1,5 +1,11 @@
 import { Github, Linkedin, Mail, ChevronDown, Code2 } from 'lucide-react'
-import { SiReact, SiTypescript, SiNodedotjs, SiAmazonwebservices, SiPostgresql } from 'react-icons/si'
+import {
+  SiReact,
+  SiTypescript,
+  SiNodedotjs,
+  SiAmazonwebservices,
+  SiPostgresql,
+} from 'react-icons/si'
 import { HiDevicePhoneMobile } from 'react-icons/hi2'
 import profileImage from '../assets/profile-1.jpg'
 
@@ -9,14 +15,30 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden py-20"
     >
-      {/* Animated Blurred Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 -left-4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        <div className="absolute bottom-0 right-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-6000"></div>
+      {/* Modern Grid Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark">
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 animate-gradient"></div>
+
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-40">
+          <div
+            className="h-full w-full"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgb(99 102 241 / 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgb(99 102 241 / 0.3) 1px, transparent 1px)
+              `,
+              backgroundSize: '4rem 4rem',
+            }}
+          />
+        </div>
+
+        {/* Glowing orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/40 rounded-full filter blur-[120px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/40 rounded-full filter blur-[120px]"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
           {/* Profile Card - Left Side */}
@@ -46,8 +68,8 @@ export function Hero() {
 
                 {/* Description */}
                 <p className="text-gray-600 text-sm text-center mb-6 leading-relaxed">
-                  A Software Engineer who has developed countless innovative solutions across web,
-                  mobile, and cloud platforms.
+                  Senior Software Engineer who has developed countless innovative solutions across
+                  web, mobile, and cloud platforms.
                 </p>
 
                 {/* Social Links */}
@@ -145,7 +167,9 @@ export function Hero() {
                       <HiDevicePhoneMobile size={24} className="text-white" />
                     </div>
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase text-white">Frontend & Mobile</h3>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase text-white">
+                    Frontend & Mobile
+                  </h3>
                   <p className="text-white/90 text-sm">React, React Native, TypeScript</p>
                 </div>
                 <div className="absolute bottom-4 right-4 text-white/60 group-hover:text-white/90 transition-colors">
@@ -171,7 +195,9 @@ export function Hero() {
                       <SiPostgresql size={24} className="text-white" />
                     </div>
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase text-white">Backend & Cloud</h3>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase text-white">
+                    Backend & Cloud
+                  </h3>
                   <p className="text-white/90 text-sm">Node.js, AWS, PostgreSQL</p>
                 </div>
                 <div className="absolute bottom-4 right-4 text-white/60 group-hover:text-white/90 transition-colors">
