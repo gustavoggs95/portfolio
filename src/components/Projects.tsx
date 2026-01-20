@@ -1,4 +1,4 @@
-import { ExternalLink, Tv, Tractor, GraduationCap } from 'lucide-react'
+import { Tv, Tractor, GraduationCap } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface Project {

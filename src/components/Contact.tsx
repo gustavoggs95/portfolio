@@ -1,4 +1,4 @@
-import { Mail, MapPin, Github, Linkedin } from 'lucide-react'
+import { Mail, Github, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export function Contact() {
