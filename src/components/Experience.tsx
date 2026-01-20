@@ -1,4 +1,7 @@
 import { Briefcase, GraduationCap, Calendar, MapPin } from 'lucide-react'
+import { motion } from 'framer-motion'
+import globantLogo from '../assets/globant-logo.png'
+import ibmLogo from '../assets/ibm-logo.png'
 
 interface ExperienceItem {
   type: 'work' | 'education'
@@ -7,6 +10,7 @@ interface ExperienceItem {
   location: string
   period: string
   description: string[]
+  logo?: string
 }
 
 const experiences: ExperienceItem[] = [
@@ -23,6 +27,7 @@ const experiences: ExperienceItem[] = [
       'Integrate data from back-end services and databases using GraphQL',
       'Collaborate with Project Owners to understand and discuss requirements',
     ],
+    logo: globantLogo,
   },
   {
     type: 'work',
@@ -36,6 +41,7 @@ const experiences: ExperienceItem[] = [
       'Integrated data from back-end services and databases using REST API',
       'Worked closely with Project Owners on requirements',
     ],
+    logo: ibmLogo,
   },
   {
     type: 'work',
@@ -49,6 +55,7 @@ const experiences: ExperienceItem[] = [
       'Integrated data from back-end services using REST API',
       'Wrote automated test scripts',
     ],
+    logo: ibmLogo,
   },
   {
     type: 'education',
@@ -64,14 +71,21 @@ export function Experience() {
   return (
     <section id="experience" className="py-24">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-4">
-          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Experience & Education
-          </span>
-        </h2>
-        <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
-          My professional journey and educational background
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl font-bold text-center mb-4">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Experience & Education
+            </span>
+          </h2>
+          <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
+            My professional journey and educational background
+          </p>
+        </motion.div>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
@@ -79,8 +93,12 @@ export function Experience() {
             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-primary via-secondary to-primary" />
 
             {experiences.map((exp, index) => (
-              <div
+              <motion.div
                 key={`${exp.company}-${exp.period}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
                   index % 2 === 0 ? 'md:flex-row-reverse' : ''
                 }`}
@@ -91,9 +109,21 @@ export function Experience() {
                 {/* Content */}
                 <div className="ml-8 md:ml-0 md:w-1/2 md:px-8">
                   <div className="bg-dark-light p-6 rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300">
-                    <div className="flex items-center gap-2 text-primary mb-2">
-                      {exp.type === 'work' ? <Briefcase size={20} /> : <GraduationCap size={20} />}
-                      <span className="font-medium">{exp.company}</span>
+                    <div className="flex items-center gap-3 mb-2">
+                      {exp.logo ? (
+                        <div className="w-16 h-16 rounded-lg p-2 flex items-center justify-center">
+                          <img
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      ) : exp.type === 'work' ? (
+                        <Briefcase size={20} className="text-primary" />
+                      ) : (
+                        <GraduationCap size={20} className="text-primary" />
+                      )}
+                      <span className="font-medium text-primary">{exp.company}</span>
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
                     <div className="flex flex-wrap gap-4 text-sm text-text-muted mb-4">
@@ -116,7 +146,7 @@ export function Experience() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { ExternalLink, Tv, Tractor, GraduationCap } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface Project {
   title: string
@@ -20,7 +21,7 @@ const projects: Project[] = [
   {
     title: 'Agricultural E-commerce',
     description:
-      'Developed mobile and web applications for the agricultural sector, including e-commerce functionality. Created intuitive interfaces for product browsing, ordering, and farm management features.',
+      'Developed mobile and web applications for the agricultural sector, including e-commerce functionality with intuitive interfaces.',
     technologies: ['React Native', 'React', 'Node.js', 'REST API'],
     icon: Tractor,
     category: 'Mobile & Web',
@@ -28,7 +29,7 @@ const projects: Project[] = [
   {
     title: 'Language School Apps',
     description:
-      'Built mobile applications for language learning schools, featuring interactive lessons, progress tracking, and student-teacher communication tools. Focused on engaging UX for learners.',
+      'Built mobile applications for language learning schools, featuring interactive lessons, progress tracking, and student-teacher tools.',
     technologies: ['React Native', 'TypeScript', 'AWS', 'Push Notifications'],
     icon: GraduationCap,
     category: 'Mobile Application',
@@ -39,19 +40,30 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 bg-dark-light/50">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-4">
-          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Featured Projects
-          </span>
-        </h2>
-        <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
-          A selection of international projects I've contributed to throughout my career
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl font-bold text-center mb-4">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Featured Projects
+            </span>
+          </h2>
+          <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
+            A selection of international projects I've contributed to throughout my career
+          </p>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {projects.map((project) => (
-            <article
+          {projects.map((project, index) => (
+            <motion.article
               key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-dark-light rounded-xl overflow-hidden border border-dark-lighter hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
             >
               {/* Project Icon Header */}
@@ -83,7 +95,7 @@ export function Projects() {
                   ))}
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 

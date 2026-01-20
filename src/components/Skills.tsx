@@ -1,4 +1,5 @@
 import { Code2, Smartphone, Server, Cloud, Database, Sparkles } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface Skill {
   name: string
@@ -43,19 +44,30 @@ export function Skills() {
   return (
     <section id="skills" className="py-24">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-4">
-          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Skills & Expertise
-          </span>
-        </h2>
-        <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
-          A Full Stack Developer comfortable working on any end of the stack
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl font-bold text-center mb-4">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Skills & Expertise
+            </span>
+          </h2>
+          <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
+            A Full Stack Developer comfortable working on any end of the stack
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {skills.map((skill) => (
-            <div
+          {skills.map((skill, index) => (
+            <motion.div
               key={skill.name}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group p-8 bg-dark-light rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 text-center"
             >
               <div className="flex justify-center mb-4">
@@ -67,7 +79,7 @@ export function Skills() {
                 {skill.name}
               </h3>
               <p className="text-sm text-text-muted">{skill.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

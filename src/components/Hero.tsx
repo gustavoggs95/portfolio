@@ -7,6 +7,7 @@ import {
   SiPostgresql,
 } from 'react-icons/si'
 import { HiDevicePhoneMobile } from 'react-icons/hi2'
+import { motion } from 'framer-motion'
 import profileImage from '../assets/profile-1.jpg'
 
 export function Hero() {
@@ -42,7 +43,12 @@ export function Hero() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
           {/* Profile Card - Left Side */}
-          <div className="w-full lg:w-[400px] flex-shrink-0">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-[400px] flex-shrink-0"
+          >
             <div className="relative">
               {/* Decorative dotted line */}
               <div className="absolute top-[280px] left-[50%] w-0.5 h-24 border-l-2 border-dashed border-primary/40 -translate-x-1/2 hidden lg:block"></div>
@@ -102,10 +108,15 @@ export function Hero() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content - Right Side */}
-          <div className="flex-1 space-y-12">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex-1 space-y-12"
+          >
             {/* Title */}
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase leading-none mb-6">
@@ -205,7 +216,7 @@ export function Hero() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
