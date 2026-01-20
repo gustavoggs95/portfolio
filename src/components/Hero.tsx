@@ -10,7 +10,7 @@ export function Hero() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-[400px,1fr] gap-16 items-start max-w-7xl mx-auto">
           {/* Profile Card - Left Side */}
-          <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+          <div className="flex justify-center lg:justify-start">
             <div className="relative">
               {/* Decorative dotted line */}
               <div className="absolute top-[280px] left-[50%] w-0.5 h-24 border-l-2 border-dashed border-primary/40 -translate-x-1/2 hidden lg:block"></div>
@@ -73,7 +73,7 @@ export function Hero() {
           </div>
 
           {/* Content - Right Side */}
-          <div className="order-1 lg:order-2 space-y-12">
+          <div className="space-y-12">
             {/* Title */}
             <div>
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-none mb-6">
