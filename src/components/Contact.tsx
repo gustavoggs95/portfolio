@@ -24,26 +24,13 @@ export function Contact() {
           </div>
 
           <div className="space-y-6 mb-12">
-            <a
-              href="mailto:ggsantos95@gmail.com"
-              className="flex items-center gap-4 text-text-muted hover:text-primary transition-colors group p-6 bg-dark-light rounded-xl border border-dark-lighter hover:border-primary/50"
-            >
-              <div className="p-3 bg-dark rounded-lg group-hover:bg-primary/20 transition-colors">
+            <div className="flex items-center gap-4 text-text-muted group p-6 bg-dark-light rounded-xl border border-dark-lighter ">
+              <div className="p-3 bg-dark rounded-lg">
                 <Mail size={28} className="text-primary" />
               </div>
               <div>
                 <p className="text-sm text-text-muted">Email</p>
                 <p className="text-text text-lg">ggsantos95@gmail.com</p>
-              </div>
-            </a>
-
-            <div className="flex items-center gap-4 text-text-muted p-6 bg-dark-light rounded-xl border border-dark-lighter">
-              <div className="p-3 bg-dark rounded-lg">
-                <MapPin size={28} className="text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-text-muted">Location</p>
-                <p className="text-text text-lg">São Paulo, Brazil</p>
               </div>
             </div>
           </div>

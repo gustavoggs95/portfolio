@@ -1,4 +1,6 @@
-import { Github, Linkedin, Mail, ChevronDown, Code2, Briefcase, Users } from 'lucide-react'
+import { Github, Linkedin, Mail, ChevronDown, Code2 } from 'lucide-react'
+import { SiReact, SiTypescript, SiNodedotjs, SiAmazonwebservices, SiPostgresql } from 'react-icons/si'
+import { HiDevicePhoneMobile } from 'react-icons/hi2'
 import profileImage from '../assets/profile-1.jpg'
 
 export function Hero() {
@@ -7,6 +9,14 @@ export function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden py-20"
     >
+      {/* Animated Blurred Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 -left-4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-0 right-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-6000"></div>
+      </div>
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
           {/* Profile Card - Left Side */}
@@ -117,26 +127,54 @@ export function Hero() {
 
             {/* Skill Cards */}
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="relative group bg-gradient-to-br from-primary to-primary-dark p-6 md:p-8 rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-                <div className="relative">
-                  <Briefcase className="mb-4" size={32} />
-                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase">Frontend & Mobile</h3>
-                  <p className="text-white/80 text-sm">React, React Native, TypeScript</p>
+              <div className="relative group bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 p-6 md:p-8 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="absolute inset-0 opacity-20">
+                  <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-white/30"></div>
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-white/30"></div>
                 </div>
-                <div className="absolute bottom-4 right-4">
+                <div className="relative">
+                  <div className="flex gap-3 mb-4">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                      <SiReact size={24} className="text-white" />
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                      <SiTypescript size={24} className="text-white" />
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                      <HiDevicePhoneMobile size={24} className="text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase text-white">Frontend & Mobile</h3>
+                  <p className="text-white/90 text-sm">React, React Native, TypeScript</p>
+                </div>
+                <div className="absolute bottom-4 right-4 text-white/60 group-hover:text-white/90 transition-colors">
                   <ChevronDown className="rotate-[-90deg]" size={24} />
                 </div>
               </div>
 
-              <div className="relative group bg-gradient-to-br from-secondary to-cyan-400 p-6 md:p-8 rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-                <div className="relative">
-                  <Users className="mb-4" size={32} />
-                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase">Backend & Cloud</h3>
-                  <p className="text-gray-900/80 text-sm">Node.js, AWS, PostgreSQL</p>
+              <div className="relative group bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 p-6 md:p-8 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-teal-500/50 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="absolute inset-0 opacity-20">
+                  <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-white/30"></div>
+                  <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-white/30"></div>
                 </div>
-                <div className="absolute bottom-4 right-4">
+                <div className="relative">
+                  <div className="flex gap-3 mb-4">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                      <SiNodedotjs size={24} className="text-white" />
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                      <SiAmazonwebservices size={24} className="text-white" />
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2">
+                      <SiPostgresql size={24} className="text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase text-white">Backend & Cloud</h3>
+                  <p className="text-white/90 text-sm">Node.js, AWS, PostgreSQL</p>
+                </div>
+                <div className="absolute bottom-4 right-4 text-white/60 group-hover:text-white/90 transition-colors">
                   <ChevronDown className="rotate-[-90deg]" size={24} />
                 </div>
               </div>
