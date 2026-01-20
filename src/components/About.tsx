@@ -42,8 +42,8 @@ export function About() {
             <div className="space-y-4 text-text-muted">
               <p>
                 I'm a Senior Software Engineer with over a decade of experience building scalable
-                web and mobile applications. Based in São Paulo, Brazil, I've had the opportunity
-                to work with leading companies like Globant and IBM.
+                web and mobile applications. Based in São Paulo, Brazil, I've had the opportunity to
+                work with leading companies like Globant and IBM.
               </p>
               <p>
                 I specialize in turning business ideas into well-architected, production-ready

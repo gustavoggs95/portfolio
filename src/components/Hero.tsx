@@ -20,8 +20,8 @@ export function Hero() {
         </h1>
         <h2 className="text-2xl md:text-3xl text-text-muted mb-8">Full Stack Developer</h2>
         <p className="max-w-2xl mx-auto text-text-muted mb-12 text-lg">
-          Senior Software Engineer with over a decade of experience building scalable web and
-          mobile applications. Turning business ideas into production-ready software.
+          Senior Software Engineer with over a decade of experience building scalable web and mobile
+          applications. Turning business ideas into production-ready software.
         </p>
 
         <div className="flex justify-center gap-6 mb-12">

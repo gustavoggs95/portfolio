@@ -1,43 +1,41 @@
-const skillCategories = [
+import { Code2, Smartphone, Server, Cloud, Database, Sparkles } from 'lucide-react'
+
+interface Skill {
+  name: string
+  icon: React.ComponentType<{ size?: number; className?: string }>
+  description: string
+}
+
+const skills: Skill[] = [
   {
-    title: 'Frontend',
-    skills: [
-      { name: 'React', level: 95 },
-      { name: 'React Native', level: 90 },
-      { name: 'TypeScript', level: 88 },
-      { name: 'HTML/CSS', level: 92 },
-      { name: 'Tailwind CSS', level: 85 },
-    ],
+    name: 'React',
+    icon: Code2,
+    description: 'Building modern, interactive UIs',
   },
   {
-    title: 'Backend',
-    skills: [
-      { name: 'Node.js', level: 90 },
-      { name: 'GraphQL', level: 85 },
-      { name: 'REST APIs', level: 92 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'MongoDB', level: 78 },
-    ],
+    name: 'React Native',
+    icon: Smartphone,
+    description: 'Cross-platform mobile apps',
   },
   {
-    title: 'Cloud & DevOps',
-    skills: [
-      { name: 'AWS Lambda', level: 85 },
-      { name: 'AWS S3/DynamoDB', level: 82 },
-      { name: 'CI/CD', level: 80 },
-      { name: 'Docker', level: 75 },
-      { name: 'Serverless', level: 85 },
-    ],
+    name: 'Node.js',
+    icon: Server,
+    description: 'Scalable backend services',
   },
   {
-    title: 'Other',
-    skills: [
-      { name: 'Git', level: 92 },
-      { name: 'Agile/Scrum', level: 90 },
-      { name: 'AI Integration', level: 75 },
-      { name: 'Testing', level: 82 },
-      { name: 'Technical Leadership', level: 85 },
-    ],
+    name: 'AWS',
+    icon: Cloud,
+    description: 'Cloud & serverless solutions',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: Database,
+    description: 'Relational database design',
+  },
+  {
+    name: 'AI',
+    icon: Sparkles,
+    description: 'AI integration & features',
   },
 ]
 
@@ -54,55 +52,23 @@ export function Skills() {
           A Full Stack Developer comfortable working on any end of the stack
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {skillCategories.map((category) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {skills.map((skill) => (
             <div
-              key={category.title}
-              className="bg-dark-light p-6 rounded-xl border border-dark-lighter"
+              key={skill.name}
+              className="group p-8 bg-dark-light rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 text-center"
             >
-              <h3 className="text-xl font-semibold mb-6 text-primary">{category.title}</h3>
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-text">{skill.name}</span>
-                      <span className="text-text-muted text-sm">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-dark rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+              <div className="flex justify-center mb-4">
+                <div className="p-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                  <skill.icon size={40} className="text-primary" />
+                </div>
               </div>
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                {skill.name}
+              </h3>
+              <p className="text-sm text-text-muted">{skill.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* Core competencies */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold mb-8">Core Technologies</h3>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {[
-              'React',
-              'React Native',
-              'Node.js',
-              'TypeScript',
-              'AWS',
-              'GraphQL',
-              'REST APIs',
-              'AI Integration',
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="px-6 py-3 bg-dark-light rounded-full border border-dark-lighter hover:border-primary hover:scale-105 transition-all duration-300 cursor-default"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
