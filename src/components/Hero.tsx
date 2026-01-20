@@ -22,11 +22,10 @@ export function Hero() {
               <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
                 {/* Profile Image */}
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-90"></div>
                   <img
                     src={profileImage}
                     alt="Gustavo Almeida"
-                    className="relative w-full h-auto object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
+                    className="relative w-full h-auto object-cover"
                   />
                 </div>
 
