@@ -1,0 +1,82 @@
+import { Code2, Smartphone, Server, Sparkles } from 'lucide-react'
+
+const highlights = [
+  {
+    icon: Code2,
+    title: 'Frontend Development',
+    description: 'Building responsive and interactive UIs with React and React Native',
+  },
+  {
+    icon: Server,
+    title: 'Backend Development',
+    description: 'Creating robust APIs and serverless solutions with Node.js and AWS',
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile Development',
+    description: 'Cross-platform mobile apps for iOS and Android with React Native',
+  },
+  {
+    icon: Sparkles,
+    title: 'AI Integration',
+    description: 'Integrating AI capabilities to enhance application features',
+  },
+]
+
+export function About() {
+  return (
+    <section id="about" className="py-24 bg-dark-light/50">
+      <div className="container mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center mb-4">
+          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            About Me
+          </span>
+        </h2>
+        <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
+          Get to know more about my background and what I do
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-2xl font-semibold mb-6 text-text">Who I Am</h3>
+            <div className="space-y-4 text-text-muted">
+              <p>
+                I'm a Senior Software Engineer with over a decade of experience building scalable
+                web and mobile applications. Based in São Paulo, Brazil, I've had the opportunity
+                to work with leading companies like Globant and IBM.
+              </p>
+              <p>
+                I specialize in turning business ideas into well-architected, production-ready
+                software. I've worked on projects from scratch, defining architecture, choosing the
+                right technologies, and delivering maintainable solutions that grow with the
+                business.
+              </p>
+              <p>
+                As a true Full Stack Developer, I'm comfortable working on any end of the stack—
+                whether it's crafting pixel-perfect UIs, building robust backend services, or
+                deploying serverless solutions on AWS. I thrive in collaborative environments and
+                enjoy discussing requirements with stakeholders to deliver the best solutions.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {highlights.map((item) => (
+              <div
+                key={item.title}
+                className="p-6 bg-dark-light rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300 group"
+              >
+                <item.icon
+                  className="text-primary mb-4 group-hover:scale-110 transition-transform"
+                  size={32}
+                />
+                <h4 className="font-semibold mb-2">{item.title}</h4>
+                <p className="text-sm text-text-muted">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
