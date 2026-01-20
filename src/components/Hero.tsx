@@ -8,9 +8,9 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden py-20"
     >
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-[400px,1fr] gap-16 items-start max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
           {/* Profile Card - Left Side */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="w-full lg:w-[400px] flex-shrink-0">
             <div className="relative">
               {/* Decorative dotted line */}
               <div className="absolute top-[280px] left-[50%] w-0.5 h-24 border-l-2 border-dashed border-primary/40 -translate-x-1/2 hidden lg:block"></div>
@@ -19,7 +19,7 @@ export function Hero() {
               </div>
 
               {/* Card */}
-              <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm">
+              <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm mx-auto lg:mx-0">
                 {/* Profile Image */}
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
                   <img
@@ -73,55 +73,55 @@ export function Hero() {
           </div>
 
           {/* Content - Right Side */}
-          <div className="space-y-12">
+          <div className="flex-1 space-y-12">
             {/* Title */}
             <div>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-none mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase leading-none mb-6">
                 <span className="text-white">FULL STACK</span>
                 <br />
                 <span className="text-white/20">DEVELOPER</span>
               </h1>
-              <p className="text-text-muted text-lg max-w-2xl">
-                Passionate about creating intuitive and engaging user experiences. Specialize in
+              <p className="text-text-muted text-base md:text-lg max-w-2xl">
+                Passionate about creating intuitive and engaging user experiences. Specialized in
                 transforming ideas into beautifully crafted products.
               </p>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-4 md:gap-6">
               <div>
-                <div className="text-5xl font-bold text-white mb-2">+10</div>
-                <div className="text-text-muted text-sm uppercase tracking-wider">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">+10</div>
+                <div className="text-text-muted text-xs md:text-sm uppercase tracking-wider">
                   Years of
                   <br />
                   Experience
                 </div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-white mb-2">+50</div>
-                <div className="text-text-muted text-sm uppercase tracking-wider">
-                  Projects
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">+8</div>
+                <div className="text-text-muted text-xs md:text-sm uppercase tracking-wider">
+                  Technologies
                   <br />
-                  Completed
+                  Mastered
                 </div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-white mb-2">+15</div>
-                <div className="text-text-muted text-sm uppercase tracking-wider">
-                  International
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">+15</div>
+                <div className="text-text-muted text-xs md:text-sm uppercase tracking-wider">
+                  Production
                   <br />
-                  Clients
+                  Apps Deployed
                 </div>
               </div>
             </div>
 
             {/* Skill Cards */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="relative group bg-gradient-to-br from-primary to-primary-dark p-8 rounded-2xl overflow-hidden">
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="relative group bg-gradient-to-br from-primary to-primary-dark p-6 md:p-8 rounded-2xl overflow-hidden">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
                 <div className="relative">
                   <Briefcase className="mb-4" size={32} />
-                  <h3 className="text-xl font-bold mb-2 uppercase">Frontend & Mobile</h3>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase">Frontend & Mobile</h3>
                   <p className="text-white/80 text-sm">React, React Native, TypeScript</p>
                 </div>
                 <div className="absolute bottom-4 right-4">
@@ -129,11 +129,11 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="relative group bg-gradient-to-br from-secondary to-cyan-400 p-8 rounded-2xl overflow-hidden">
+              <div className="relative group bg-gradient-to-br from-secondary to-cyan-400 p-6 md:p-8 rounded-2xl overflow-hidden">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
                 <div className="relative">
                   <Users className="mb-4" size={32} />
-                  <h3 className="text-xl font-bold mb-2 uppercase">Backend & Cloud</h3>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 uppercase">Backend & Cloud</h3>
                   <p className="text-gray-900/80 text-sm">Node.js, AWS, PostgreSQL</p>
                 </div>
                 <div className="absolute bottom-4 right-4">
