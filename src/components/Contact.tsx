@@ -37,7 +37,7 @@ export function Contact() {
             </p>
           </motion.div>
 
-          <div className="space-y-6 mb-12">
+          <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -53,34 +53,45 @@ export function Contact() {
                 <p className="text-text text-lg">ggsantos95@gmail.com</p>
               </div>
             </motion.div>
-          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex justify-center gap-6"
-          >
-            <a
+            <motion.a
               href="https://github.com/gustavoggs95"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 bg-dark-light rounded-xl hover:bg-primary/20 transition-all duration-300 group border border-dark-lighter hover:border-primary/50"
-              aria-label="GitHub"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex items-center gap-4 text-text-muted group p-6 bg-dark-light rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300"
             >
-              <Github size={32} className="text-text-muted group-hover:text-primary" />
-            </a>
-            <a
+              <div className="p-3 bg-dark rounded-lg">
+                <Github size={28} className="text-primary" />
+              </div>
+              <div>
+                <p className="text-sm text-text-muted">GitHub</p>
+                <p className="text-text text-lg">gustavoggs95</p>
+              </div>
+            </motion.a>
+
+            <motion.a
               href="https://www.linkedin.com/in/gustavo-almeida-dos-santos-780bb1b1/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 bg-dark-light rounded-xl hover:bg-primary/20 transition-all duration-300 group border border-dark-lighter hover:border-primary/50"
-              aria-label="LinkedIn"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex items-center gap-4 text-text-muted group p-6 bg-dark-light rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300"
             >
-              <Linkedin size={32} className="text-text-muted group-hover:text-primary" />
-            </a>
-          </motion.div>
+              <div className="p-3 bg-dark rounded-lg">
+                <Linkedin size={28} className="text-primary" />
+              </div>
+              <div>
+                <p className="text-sm text-text-muted">LinkedIn</p>
+                <p className="text-text text-lg">Gustavo Almeida dos Santos</p>
+              </div>
+            </motion.a>
+          </div>
         </div>
       </div>
     </section>
