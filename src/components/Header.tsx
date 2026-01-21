@@ -53,12 +53,16 @@ export function Header() {
         </div>
 
         {isMenuOpen && (
-          <ul className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.name}>
+          <ul className="md:hidden mt-4 flex flex-col gap-4 bg-dark/95 backdrop-blur-lg rounded-lg p-6 shadow-xl border border-primary/20 animate-slide-in-top">
+            {navLinks.map((link, index) => (
+              <li
+                key={link.name}
+                className="animate-slide-in-left opacity-0"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
                 <a
                   href={link.href}
-                  className="block text-text-muted hover:text-primary transition-colors duration-300"
+                  className="block text-text-muted hover:text-primary transition-colors duration-300 text-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
