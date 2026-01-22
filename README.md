@@ -2,6 +2,8 @@
 
 Personal portfolio website built with React, TypeScript, and Tailwind CSS.
 
+🌐 **Live Demo:** https://gus-portfolio-ts.vercel.app/
+
 ## 🚀 Tech Stack
 
 - **Framework:** React 19 + Vite
