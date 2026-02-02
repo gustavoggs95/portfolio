@@ -76,7 +76,7 @@ export function Projects() {
         <div className="max-w-2xl mx-auto mb-12">
           {projects
             .filter((project) => project.featured)
-            .map((project, index) => (
+            .map((project) => (
               <motion.article
                 key={project.title}
                 initial={{ opacity: 0, y: 30 }}
