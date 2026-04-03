@@ -11,6 +11,8 @@ interface ExperienceItem {
   period: string
   description: string[]
   logo?: string
+  accent: string
+  glow: string
 }
 
 const experiences: ExperienceItem[] = [
@@ -28,6 +30,8 @@ const experiences: ExperienceItem[] = [
       'Collaborate with Project Owners to understand and discuss requirements',
     ],
     logo: globantLogo,
+    accent: 'from-emerald-400/20 via-secondary/10 to-transparent',
+    glow: 'bg-emerald-400/25',
   },
   {
     type: 'work',
@@ -42,6 +46,8 @@ const experiences: ExperienceItem[] = [
       'Worked closely with Project Owners on requirements',
     ],
     logo: ibmLogo,
+    accent: 'from-sky-400/20 via-primary/10 to-transparent',
+    glow: 'bg-sky-400/25',
   },
   {
     type: 'work',
@@ -56,6 +62,8 @@ const experiences: ExperienceItem[] = [
       'Wrote automated test scripts',
     ],
     logo: ibmLogo,
+    accent: 'from-fuchsia-500/20 via-primary/10 to-transparent',
+    glow: 'bg-fuchsia-500/25',
   },
   {
     type: 'education',
@@ -64,6 +72,8 @@ const experiences: ExperienceItem[] = [
     location: 'São Paulo, Brazil',
     period: '2013 - 2016',
     description: ['Systems Analysis and Development'],
+    accent: 'from-amber-300/20 via-secondary/10 to-transparent',
+    glow: 'bg-amber-300/25',
   },
 ]
 
@@ -78,7 +88,7 @@ export function Experience() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold text-center mb-4">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               Experience & Education
             </span>
           </h2>
@@ -89,7 +99,7 @@ export function Experience() {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-primary via-secondary to-primary" />
+            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-linear-to-b from-primary via-secondary to-primary" />
 
             {experiences.map((exp, index) => (
               <motion.div
@@ -105,42 +115,73 @@ export function Experience() {
                 <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-dark z-10" />
 
                 <div className="ml-8 md:ml-0 md:w-1/2 md:px-8">
-                  <div className="bg-dark-light p-6 rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300">
-                    <div className="flex items-center gap-3 mb-2">
-                      {exp.logo ? (
-                        <div className="w-16 h-16 rounded-lg p-2 flex items-center justify-center">
-                          <img
-                            src={exp.logo}
-                            alt={`${exp.company} logo`}
-                            className="w-full h-full object-contain"
-                          />
+                  <div className="group relative isolate overflow-hidden rounded-[28px] border border-white/10 bg-dark/80 p-5 shadow-[0_18px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_24px_80px_rgba(2,6,23,0.65)] sm:p-6">
+                    {/* Gradient accent */}
+                    <div
+                      className={`absolute inset-0 bg-linear-to-br ${exp.accent} opacity-70 transition-opacity duration-500 group-hover:opacity-100`}
+                    />
+                    {/* Inner glass edge */}
+                    <div className="absolute inset-px rounded-[27px] bg-linear-to-br from-white/10 via-white/5 to-transparent opacity-60" />
+                    {/* Glow blob */}
+                    <div
+                      className={`absolute -right-10 -top-10 h-28 w-28 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${exp.glow}`}
+                    />
+                    {/* Hover border shimmer */}
+                    <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                      <div className="absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-white/30 to-transparent" />
+                      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+                    </div>
+
+                    <div className="relative">
+                      <div className="mb-4 flex items-start justify-between gap-4">
+                        <div>
+                          <span className="font-medium text-primary">{exp.company}</span>
+                          <h3 className="mt-1 text-xl font-semibold text-text transition-colors duration-300 group-hover:text-white">
+                            {exp.title}
+                          </h3>
                         </div>
-                      ) : exp.type === 'work' ? (
-                        <Briefcase size={20} className="text-primary" />
-                      ) : (
-                        <GraduationCap size={20} className="text-primary" />
-                      )}
-                      <span className="font-medium text-primary">{exp.company}</span>
+
+                        {exp.logo ? (
+                          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/8 p-2 shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-105">
+                            <img
+                              src={exp.logo}
+                              alt={`${exp.company} logo`}
+                              className="h-full w-full object-contain"
+                            />
+                          </div>
+                        ) : (
+                          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/8 shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-105">
+                            {exp.type === 'work' ? (
+                              <Briefcase size={24} className="text-white" />
+                            ) : (
+                              <GraduationCap size={24} className="text-white" />
+                            )}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="mb-4 flex flex-wrap gap-4 text-sm text-text-muted">
+                        <span className="flex items-center gap-1">
+                          <Calendar size={14} />
+                          {exp.period}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <MapPin size={14} />
+                          {exp.location}
+                        </span>
+                      </div>
+
+                      <div className="border-t border-white/10 pt-4">
+                        <ul className="space-y-2">
+                          {exp.description.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
+                              <span className="mt-0.5 text-primary leading-none">•</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
-                    <div className="flex flex-wrap gap-4 text-sm text-text-muted mb-4">
-                      <span className="flex items-center gap-1">
-                        <Calendar size={14} />
-                        {exp.period}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin size={14} />
-                        {exp.location}
-                      </span>
-                    </div>
-                    <ul className="space-y-2">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="text-text-muted text-sm flex items-start gap-2">
-                          <span className="text-primary mt-1.5">•</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               </motion.div>

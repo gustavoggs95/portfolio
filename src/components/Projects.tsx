@@ -12,6 +12,8 @@ interface Project {
   githubUrl?: string
   demoUrl?: string
   featured?: boolean
+  accent: string
+  glow: string
 }
 
 const projects: Project[] = [
@@ -25,6 +27,8 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/gustavoggs95/postry-ai',
     demoUrl: 'https://postry-ai.vercel.app/',
     featured: true,
+    accent: 'from-fuchsia-500/20 via-primary/10 to-transparent',
+    glow: 'bg-fuchsia-500/25',
   },
   {
     title: 'TV Media Platform',
@@ -33,6 +37,8 @@ const projects: Project[] = [
     technologies: ['React', 'Node.js', 'AWS', 'GraphQL'],
     icon: Tv,
     category: 'Web Application',
+    accent: 'from-sky-400/20 via-primary/10 to-transparent',
+    glow: 'bg-sky-400/25',
   },
   {
     title: 'Agricultural E-commerce',
@@ -41,6 +47,8 @@ const projects: Project[] = [
     technologies: ['React Native', 'React', 'Node.js', 'REST API'],
     icon: Tractor,
     category: 'Mobile & Web',
+    accent: 'from-emerald-400/20 via-secondary/10 to-transparent',
+    glow: 'bg-emerald-400/25',
   },
   {
     title: 'Language School Apps',
@@ -49,6 +57,8 @@ const projects: Project[] = [
     technologies: ['React Native', 'TypeScript', 'AWS', 'Push Notifications'],
     icon: GraduationCap,
     category: 'Mobile Application',
+    accent: 'from-amber-300/20 via-secondary/10 to-transparent',
+    glow: 'bg-amber-300/25',
   },
 ]
 
@@ -63,7 +73,7 @@ export function Projects() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold text-center mb-4">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               Featured Projects
             </span>
           </h2>
@@ -83,10 +93,21 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5 }}
-                className="group bg-dark-light rounded-xl overflow-hidden border border-dark-lighter hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                className="group relative isolate overflow-hidden rounded-[28px] border border-white/10 bg-dark/80 shadow-[0_18px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_24px_80px_rgba(2,6,23,0.65)]"
               >
-                <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:scale-110 transition-transform duration-500" />
+                <div
+                  className={`absolute inset-0 bg-linear-to-br ${project.accent} opacity-70 transition-opacity duration-500 group-hover:opacity-100`}
+                />
+                <div className="absolute inset-px rounded-[27px] bg-linear-to-br from-white/10 via-white/5 to-transparent opacity-60" />
+                <div
+                  className={`absolute -right-10 -top-10 h-28 w-28 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${project.glow}`}
+                />
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-white/30 to-transparent" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+                </div>
+
+                <div className="relative h-64 flex items-center justify-center overflow-hidden">
                   {project.customIcon ? (
                     <img
                       src={project.customIcon}
@@ -97,17 +118,17 @@ export function Projects() {
                     project.icon && (
                       <project.icon
                         size={80}
-                        className="text-primary/80 group-hover:scale-110 transition-transform duration-300"
+                        className="text-white/80 group-hover:scale-110 transition-transform duration-300"
                       />
                     )
                   )}
                 </div>
 
-                <div className="p-8">
-                  <span className="text-xs text-secondary font-medium uppercase tracking-wider">
+                <div className="relative p-8 border-t border-white/10">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-text-muted">
                     {project.category}
                   </span>
-                  <h3 className="text-2xl font-semibold mt-2 mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-semibold mt-2 mb-3 text-text transition-colors duration-300 group-hover:text-white">
                     {project.title}
                   </h3>
                   <p className="text-text-muted mb-6">{project.description}</p>
@@ -116,7 +137,7 @@ export function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs bg-dark rounded-full text-text-muted border border-dark-lighter"
+                        className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs font-medium tracking-wide text-white/80 backdrop-blur-sm"
                       >
                         {tech}
                       </span>
@@ -130,7 +151,7 @@ export function Projects() {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-dark border border-dark-lighter rounded-lg hover:border-primary transition-colors text-sm"
+                          className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/8 px-4 py-2 text-sm text-white/80 transition-all duration-300 hover:border-white/25 hover:text-white"
                         >
                           <Github size={16} />
                           View Code
@@ -141,7 +162,7 @@ export function Projects() {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 rounded-lg transition-colors text-sm font-medium"
+                          className="flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/90"
                         >
                           <ExternalLink size={16} />
                           Live Demo
@@ -165,10 +186,21 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-dark-light rounded-xl overflow-hidden border border-dark-lighter hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                className="group relative isolate overflow-hidden rounded-[28px] border border-white/10 bg-dark/80 shadow-[0_18px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_24px_80px_rgba(2,6,23,0.65)]"
               >
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:scale-110 transition-transform duration-500" />
+                <div
+                  className={`absolute inset-0 bg-linear-to-br ${project.accent} opacity-70 transition-opacity duration-500 group-hover:opacity-100`}
+                />
+                <div className="absolute inset-px rounded-[27px] bg-linear-to-br from-white/10 via-white/5 to-transparent opacity-60" />
+                <div
+                  className={`absolute -right-10 -top-10 h-28 w-28 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${project.glow}`}
+                />
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-white/30 to-transparent" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+                </div>
+
+                <div className="relative h-48 flex items-center justify-center overflow-hidden">
                   {project.customIcon ? (
                     <img
                       src={project.customIcon}
@@ -179,17 +211,17 @@ export function Projects() {
                     project.icon && (
                       <project.icon
                         size={64}
-                        className="text-primary/80 group-hover:scale-110 transition-transform duration-300"
+                        className="text-white/80 group-hover:scale-110 transition-transform duration-300"
                       />
                     )
                   )}
                 </div>
 
-                <div className="p-6">
-                  <span className="text-xs text-secondary font-medium uppercase tracking-wider">
+                <div className="relative p-6 border-t border-white/10">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-text-muted">
                     {project.category}
                   </span>
-                  <h3 className="text-xl font-semibold mt-2 mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold mt-2 mb-3 text-text transition-colors duration-300 group-hover:text-white">
                     {project.title}
                   </h3>
                   <p className="text-text-muted text-sm mb-4 line-clamp-3">{project.description}</p>
@@ -198,7 +230,7 @@ export function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs bg-dark rounded-full text-text-muted border border-dark-lighter"
+                        className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs font-medium tracking-wide text-white/80 backdrop-blur-sm"
                       >
                         {tech}
                       </span>
@@ -212,7 +244,7 @@ export function Projects() {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-xs text-text-muted hover:text-primary transition-colors"
+                          className="flex items-center gap-1 text-xs text-text-muted hover:text-white transition-colors"
                         >
                           <Github size={14} />
                           Code
@@ -223,7 +255,7 @@ export function Projects() {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-xs text-secondary hover:text-primary transition-colors"
+                          className="flex items-center gap-1 text-xs text-secondary hover:text-white transition-colors"
                         >
                           <ExternalLink size={14} />
                           Demo

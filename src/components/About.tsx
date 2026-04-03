@@ -1,26 +1,42 @@
-import { Code2, Smartphone, Server, Sparkles } from 'lucide-react'
+import { Code2, Server, Smartphone, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const highlights = [
   {
     icon: Code2,
+    eyebrow: 'Interactive Systems',
     title: 'Frontend Development',
-    description: 'Building responsive and interactive UIs with React and React Native',
+    description: 'Polished web experiences with strong interaction and motion.',
+    metric: 'React, React Native, TypeScript',
+    accent: 'from-fuchsia-500/25 via-primary/10 to-transparent',
+    glow: 'bg-fuchsia-500/30',
   },
   {
     icon: Server,
+    eyebrow: 'Scalable Services',
     title: 'Backend Development',
-    description: 'Creating robust APIs and serverless solutions with Node.js and AWS',
+    description: 'Resilient APIs and cloud-ready services built to scale cleanly.',
+    metric: 'Node.js, AWS, PostgreSQL',
+    accent: 'from-emerald-400/25 via-secondary/10 to-transparent',
+    glow: 'bg-emerald-400/30',
   },
   {
     icon: Smartphone,
+    eyebrow: 'Cross-Platform',
     title: 'Mobile Development',
-    description: 'Cross-platform mobile apps for iOS and Android with React Native',
+    description: 'Mobile products that feel native, fast, and consistent.',
+    metric: 'iOS, Android, React Native',
+    accent: 'from-sky-400/25 via-primary/10 to-transparent',
+    glow: 'bg-sky-400/30',
   },
   {
     icon: Sparkles,
-    title: 'AI Integration',
-    description: 'Integrating AI capabilities to enhance application features',
+    eyebrow: 'Product Intelligence',
+    title: 'AI Integration Workflows',
+    description: 'Practical AI features for automation, assistance, and smarter flows.',
+    metric: 'Automation, assistants, chatbots',
+    accent: 'from-amber-300/25 via-secondary/10 to-transparent',
+    glow: 'bg-amber-300/30',
   },
 ]
 
@@ -35,7 +51,7 @@ export function About() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold text-center mb-4">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               About Me
             </span>
           </h2>
@@ -78,24 +94,56 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4"
+            className="grid gap-5 sm:grid-cols-2"
           >
             {highlights.map((item, index) => (
-              <motion.div
+              <motion.article
                 key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                className="p-6 bg-dark-light rounded-xl border border-dark-lighter hover:border-primary/50 transition-all duration-300 group"
+                className="group relative isolate overflow-hidden rounded-[28px] border border-white/10 bg-dark/80 p-5 shadow-[0_18px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_24px_80px_rgba(2,6,23,0.65)] sm:p-6"
               >
-                <item.icon
-                  className="text-primary mb-4 group-hover:scale-110 transition-transform"
-                  size={32}
+                <div
+                  className={`absolute inset-0 bg-linear-to-br ${item.accent} opacity-70 transition-opacity duration-500 group-hover:opacity-100`}
                 />
-                <h4 className="font-semibold mb-2">{item.title}</h4>
-                <p className="text-sm text-text-muted">{item.description}</p>
-              </motion.div>
+                <div className="absolute inset-px rounded-[27px] bg-linear-to-br from-white/10 via-white/5 to-transparent opacity-60" />
+                <div
+                  className={`absolute -right-10 -top-10 h-28 w-28 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${item.glow}`}
+                />
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-white/30 to-transparent" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+                </div>
+
+                <div className="relative flex h-full flex-col">
+                  <div className="mb-4 flex items-start justify-between gap-4">
+                    <div>
+                      <h4 className="max-w-48 text-xl font-semibold leading-tight text-text transition-colors duration-300 group-hover:text-white">
+                        {item.title}
+                      </h4>
+                    </div>
+
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/8 shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-105">
+                      <item.icon className="text-white" size={24} />
+                    </div>
+                  </div>
+
+                  <p className="mb-4 text-sm leading-6 text-text-muted">{item.description}</p>
+
+                  <div className="mt-auto flex items-end justify-between gap-4 border-t border-white/10 pt-4">
+                    <div>
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-text-muted">
+                        Focus Stack
+                      </p>
+                      <p className="max-w-56 text-sm font-medium leading-5 text-white/90">
+                        {item.metric}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
             ))}
           </motion.div>
         </div>
