@@ -42,8 +42,29 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-dark-light/50">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 bg-dark-light/50 relative overflow-hidden">
+      {/* Topographic peak contours */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-violet-400/50 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(139,92,246,0.14) 0%, transparent 65%)' }} />
+        <svg className="absolute bottom-0 right-0 w-125 h-105 opacity-20" viewBox="0 0 400 340" fill="none">
+          <ellipse cx="350" cy="310" rx="340" ry="255" stroke="#8b5cf6" strokeWidth="1.4" transform="rotate(-15 350 310)"/>
+          <ellipse cx="350" cy="310" rx="268" ry="192" stroke="#7c3aed" strokeWidth="1.2" transform="rotate(-15 350 310)"/>
+          <ellipse cx="350" cy="310" rx="198" ry="136" stroke="#6366f1" strokeWidth="1" transform="rotate(-14 350 310)"/>
+          <ellipse cx="350" cy="310" rx="130" ry="84" stroke="#4f46e5" strokeWidth="0.8" transform="rotate(-13 350 310)"/>
+          <ellipse cx="350" cy="310" rx="70" ry="42" stroke="#4338ca" strokeWidth="0.7" transform="rotate(-12 350 310)"/>
+          <circle cx="350" cy="310" r="16" stroke="#a78bfa" strokeWidth="1"/>
+          <circle cx="350" cy="310" r="5" fill="#a78bfa"/>
+        </svg>
+        <svg className="absolute top-0 left-0 w-65 h-65 opacity-15" viewBox="0 0 200 200" fill="none">
+          <ellipse cx="50" cy="50" rx="180" ry="130" stroke="#8b5cf6" strokeWidth="1" transform="rotate(20 50 50)"/>
+          <ellipse cx="50" cy="50" rx="130" ry="88" stroke="#6366f1" strokeWidth="0.8" transform="rotate(20 50 50)"/>
+          <ellipse cx="50" cy="50" rx="80" ry="50" stroke="#4f46e5" strokeWidth="0.6" transform="rotate(18 50 50)"/>
+          <circle cx="50" cy="50" r="8" stroke="#a78bfa" strokeWidth="0.8"/>
+          <circle cx="50" cy="50" r="3" fill="#a78bfa"/>
+        </svg>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

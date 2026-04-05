@@ -79,8 +79,40 @@ const experiences: ExperienceItem[] = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24">
-      <div className="container mx-auto px-6">
+    <section id="experience" className="py-24 relative overflow-hidden">
+      {/* Fullstack architecture layers */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-emerald-400/50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-emerald-400/50 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-96 h-96" style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(52,211,153,0.15) 0%, transparent 65%)' }} />
+        <svg className="absolute bottom-0 right-0 w-56 h-64 opacity-20" viewBox="0 0 200 260" fill="none">
+          <rect x="8" y="8" width="176" height="44" rx="6" stroke="#4ade80" strokeWidth="1.2" fill="#4ade80" fillOpacity="0.08"/>
+          <rect x="18" y="16" width="28" height="28" rx="3" stroke="#4ade80" strokeWidth="0.8" fill="none"/>
+          <rect x="56" y="16" width="28" height="28" rx="3" stroke="#4ade80" strokeWidth="0.8" fill="none"/>
+          <rect x="94" y="16" width="28" height="28" rx="3" stroke="#4ade80" strokeWidth="0.8" fill="none"/>
+          <rect x="132" y="16" width="44" height="28" rx="3" stroke="#4ade80" strokeWidth="0.8" fill="none"/>
+          <line x1="96" y1="52" x2="96" y2="65" stroke="#6ee7b7" strokeWidth="1.2" strokeDasharray="3 2"/>
+          <polygon points="91,63 101,63 96,69" fill="#6ee7b7"/>
+          <rect x="8" y="69" width="176" height="44" rx="6" stroke="#34d399" strokeWidth="1.2" fill="#34d399" fillOpacity="0.08"/>
+          <rect x="18" y="78" width="44" height="26" rx="3" stroke="#34d399" strokeWidth="0.8" fill="none"/>
+          <rect x="72" y="78" width="44" height="26" rx="3" stroke="#34d399" strokeWidth="0.8" fill="none"/>
+          <rect x="126" y="78" width="50" height="26" rx="3" stroke="#34d399" strokeWidth="0.8" fill="none"/>
+          <line x1="96" y1="113" x2="96" y2="126" stroke="#6ee7b7" strokeWidth="1.2" strokeDasharray="3 2"/>
+          <polygon points="91,124 101,124 96,130" fill="#6ee7b7"/>
+          <rect x="8" y="130" width="176" height="44" rx="6" stroke="#10b981" strokeWidth="1.2" fill="#10b981" fillOpacity="0.08"/>
+          <rect x="18" y="139" width="52" height="26" rx="2" stroke="#10b981" strokeWidth="0.8" fill="none"/>
+          <rect x="80" y="139" width="52" height="26" rx="2" stroke="#10b981" strokeWidth="0.8" fill="none"/>
+          <rect x="142" y="139" width="34" height="26" rx="2" stroke="#10b981" strokeWidth="0.8" fill="none"/>
+          <line x1="96" y1="174" x2="96" y2="187" stroke="#6ee7b7" strokeWidth="1.2" strokeDasharray="3 2"/>
+          <polygon points="91,185 101,185 96,191" fill="#6ee7b7"/>
+          <rect x="8" y="191" width="176" height="44" rx="6" stroke="#059669" strokeWidth="1.2" fill="#059669" fillOpacity="0.08"/>
+          <rect x="18" y="200" width="28" height="26" rx="3" stroke="#059669" strokeWidth="0.8" fill="none"/>
+          <rect x="56" y="200" width="28" height="26" rx="3" stroke="#059669" strokeWidth="0.8" fill="none"/>
+          <rect x="94" y="200" width="28" height="26" rx="3" stroke="#059669" strokeWidth="0.8" fill="none"/>
+          <rect x="132" y="200" width="44" height="26" rx="3" stroke="#059669" strokeWidth="0.8" fill="none"/>
+        </svg>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

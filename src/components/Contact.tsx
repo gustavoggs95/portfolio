@@ -3,8 +3,28 @@ import { motion } from 'framer-motion'
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 bg-dark-light/50">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-24 bg-dark-light/50 relative overflow-hidden">
+      {/* Signal broadcast tower */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-violet-400/50 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(139,92,246,0.14) 0%, transparent 65%)' }} />
+        <svg className="absolute bottom-0 right-16 w-85 h-95 opacity-25" viewBox="0 0 280 340" fill="none">
+          <line x1="140" y1="340" x2="140" y2="255" stroke="#8b5cf6" strokeWidth="1.5"/>
+          <line x1="116" y1="340" x2="164" y2="340" stroke="#8b5cf6" strokeWidth="1.5"/>
+          <line x1="124" y1="340" x2="112" y2="316" stroke="#7c3aed" strokeWidth="1"/>
+          <line x1="156" y1="340" x2="168" y2="316" stroke="#7c3aed" strokeWidth="1"/>
+          <line x1="132" y1="282" x2="148" y2="295" stroke="#6d28d9" strokeWidth="0.9"/>
+          <line x1="148" y1="282" x2="132" y2="295" stroke="#6d28d9" strokeWidth="0.9"/>
+          <line x1="132" y1="300" x2="148" y2="313" stroke="#6d28d9" strokeWidth="0.9"/>
+          <line x1="148" y1="300" x2="132" y2="313" stroke="#6d28d9" strokeWidth="0.9"/>
+          <circle cx="140" cy="253" r="4.5" stroke="#a78bfa" strokeWidth="1.5" fill="none"/>
+          <path d="M 102 232 Q 140 208 178 232" stroke="#a78bfa" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+          <path d="M 74 200 Q 140 164 206 200" stroke="#8b5cf6" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+          <path d="M 44 165 Q 140 116 236 165" stroke="#7c3aed" strokeWidth="1" fill="none" strokeLinecap="round"/>
+          <path d="M 14 128 Q 140 65 266 128" stroke="#6d28d9" strokeWidth="0.7" fill="none" strokeLinecap="round"/>
+        </svg>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

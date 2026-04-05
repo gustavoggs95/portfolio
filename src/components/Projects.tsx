@@ -64,8 +64,42 @@ const projects: Project[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 bg-dark-light/50">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-24 bg-dark-light/50 relative overflow-hidden">
+      {/* Browser window wireframes */}
+      <div className="absolute inset-0 pointer-events-none select-none">
+        <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-fuchsia-400/50 to-transparent" />
+        <div className="absolute top-0 left-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 0% 0%, rgba(217,70,239,0.12) 0%, transparent 65%)' }} />
+        <svg className="absolute top-4 left-0 w-100 h-70 opacity-15" viewBox="0 0 400 280" fill="none">
+          <rect x="1" y="1" width="398" height="278" rx="10" stroke="#94a3b8" strokeWidth="1.5"/>
+          <line x1="1" y1="36" x2="399" y2="36" stroke="#64748b" strokeWidth="1"/>
+          <circle cx="18" cy="19" r="5.5" stroke="#f87171" strokeWidth="1"/>
+          <circle cx="32" cy="19" r="5.5" stroke="#fbbf24" strokeWidth="1"/>
+          <circle cx="46" cy="19" r="5.5" stroke="#4ade80" strokeWidth="1"/>
+          <rect x="64" y="11" width="210" height="14" rx="7" stroke="#475569" strokeWidth="1"/>
+          <rect x="14" y="52" width="100" height="10" rx="2" stroke="#94a3b8" strokeWidth="0.7"/>
+          <rect x="14" y="70" width="360" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
+          <rect x="14" y="83" width="300" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
+          <rect x="14" y="102" width="174" height="110" rx="4" stroke="#475569" strokeWidth="0.7"/>
+          <rect x="198" y="102" width="174" height="110" rx="4" stroke="#475569" strokeWidth="0.7"/>
+          <rect x="14" y="224" width="360" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
+          <rect x="14" y="238" width="220" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
+          <rect x="14" y="254" width="160" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
+        </svg>
+        <svg className="absolute top-52 left-8 w-85 h-60 opacity-20" viewBox="0 0 340 240" fill="none">
+          <rect x="1" y="1" width="338" height="238" rx="10" stroke="#d946ef" strokeWidth="1.5"/>
+          <line x1="1" y1="32" x2="339" y2="32" stroke="#a855f7" strokeWidth="1"/>
+          <circle cx="15" cy="17" r="5" stroke="#f87171" strokeWidth="1"/>
+          <circle cx="28" cy="17" r="5" stroke="#fbbf24" strokeWidth="1"/>
+          <circle cx="41" cy="17" r="5" stroke="#4ade80" strokeWidth="1"/>
+          <rect x="58" y="10" width="180" height="14" rx="7" stroke="#7c3aed" strokeWidth="1"/>
+          <rect x="14" y="46" width="80" height="9" rx="2" stroke="#c026d3" strokeWidth="0.7"/>
+          <rect x="14" y="63" width="300" height="7" rx="2" stroke="#a855f7" strokeWidth="0.7"/>
+          <rect x="14" y="78" width="240" height="7" rx="2" stroke="#a855f7" strokeWidth="0.7"/>
+          <rect x="14" y="100" width="300" height="100" rx="4" stroke="#7c3aed" strokeWidth="0.7"/>
+          <rect x="14" y="212" width="180" height="7" rx="2" stroke="#a855f7" strokeWidth="0.7"/>
+        </svg>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

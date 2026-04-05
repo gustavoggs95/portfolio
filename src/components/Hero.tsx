@@ -177,9 +177,6 @@ export function Hero() {
                   </h3>
                   <p className="text-white/90 text-sm">React, React Native, TypeScript</p>
                 </div>
-                <div className="absolute bottom-4 right-4 text-white/60 group-hover:text-white/90 transition-colors">
-                  <ChevronDown className="rotate-[-90deg]" size={24} />
-                </div>
               </div>
 
               <div className="relative group bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 p-6 md:p-8 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-teal-500/50 transition-all duration-300">
@@ -204,9 +201,6 @@ export function Hero() {
                     Backend & Cloud
                   </h3>
                   <p className="text-white/90 text-sm">Node.js, AWS, PostgreSQL</p>
-                </div>
-                <div className="absolute bottom-4 right-4 text-white/60 group-hover:text-white/90 transition-colors">
-                  <ChevronDown className="rotate-[-90deg]" size={24} />
                 </div>
               </div>
             </div>
