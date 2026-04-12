@@ -7,6 +7,28 @@ export function Contact() {
       {/* Signal broadcast tower */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-violet-400/50 to-transparent" />
+
+        {/* top-left mirror — arcs open upward */}
+        <div className="absolute top-0 left-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 0% 0%, rgba(139,92,246,0.14) 0%, transparent 65%)' }} />
+        <svg className="absolute top-0 left-16 w-85 h-95 opacity-25" viewBox="0 0 280 340" fill="none">
+          {/* mast — goes up from y=0 */}
+          <line x1="140" y1="0"   x2="140" y2="85"  stroke="#8b5cf6" strokeWidth="1.5"/>
+          <line x1="116" y1="0"   x2="164" y2="0"   stroke="#8b5cf6" strokeWidth="1.5"/>
+          <line x1="124" y1="0"   x2="112" y2="24"  stroke="#7c3aed" strokeWidth="1"/>
+          <line x1="156" y1="0"   x2="168" y2="24"  stroke="#7c3aed" strokeWidth="1"/>
+          <line x1="132" y1="45"  x2="148" y2="58"  stroke="#6d28d9" strokeWidth="0.9"/>
+          <line x1="148" y1="45"  x2="132" y2="58"  stroke="#6d28d9" strokeWidth="0.9"/>
+          <line x1="132" y1="27"  x2="148" y2="40"  stroke="#6d28d9" strokeWidth="0.9"/>
+          <line x1="148" y1="27"  x2="132" y2="40"  stroke="#6d28d9" strokeWidth="0.9"/>
+          <circle cx="140" cy="87" r="4.5" stroke="#a78bfa" strokeWidth="1.5" fill="none"/>
+          {/* arcs open upward — Q control points above the arc endpoints */}
+          <path d="M 102 108 Q 140 132 178 108" stroke="#a78bfa" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+          <path d="M 74  140 Q 140 176 206 140" stroke="#8b5cf6" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+          <path d="M 44  175 Q 140 224 236 175" stroke="#7c3aed" strokeWidth="1"   fill="none" strokeLinecap="round"/>
+          <path d="M 14  212 Q 140 275 266 212" stroke="#6d28d9" strokeWidth="0.7" fill="none" strokeLinecap="round"/>
+        </svg>
+
+        {/* bottom-right original */}
         <div className="absolute bottom-0 right-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(139,92,246,0.14) 0%, transparent 65%)' }} />
         <svg className="absolute bottom-0 right-16 w-85 h-95 opacity-25" viewBox="0 0 280 340" fill="none">
           <line x1="140" y1="340" x2="140" y2="255" stroke="#8b5cf6" strokeWidth="1.5"/>
