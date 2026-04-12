@@ -137,7 +137,7 @@ export function About() {
                 business.
               </p>
               <p>
-                As a true Full Stack Developer, I'm comfortable working on any end of the stack—
+                As a true Full Stack Developer, I'm comfortable working on any end of the stack,
                 whether it's crafting pixel-perfect UIs, building robust backend services, or
                 deploying serverless solutions on AWS. I thrive in collaborative environments and
                 enjoy discussing requirements with stakeholders to deliver the best solutions.
