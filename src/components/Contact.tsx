@@ -9,8 +9,8 @@ export function Contact() {
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-violet-400/50 to-transparent" />
 
         {/* top-left mirror — arcs open upward */}
-        <div className="absolute top-0 left-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 0% 0%, rgba(139,92,246,0.14) 0%, transparent 65%)' }} />
-        <svg className="absolute top-0 left-16 w-85 h-95 opacity-25" viewBox="0 0 280 340" fill="none">
+        <div className="absolute top-0 left-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 0% 0%, rgba(139,92,246,0.35) 0%, transparent 65%)' }} />
+        <svg className="absolute top-0 left-16 w-85 h-95 opacity-50" viewBox="0 0 280 340" fill="none">
           {/* mast — goes up from y=0 */}
           <line x1="140" y1="0"   x2="140" y2="85"  stroke="#8b5cf6" strokeWidth="1.5"/>
           <line x1="116" y1="0"   x2="164" y2="0"   stroke="#8b5cf6" strokeWidth="1.5"/>
@@ -29,8 +29,8 @@ export function Contact() {
         </svg>
 
         {/* bottom-right original */}
-        <div className="absolute bottom-0 right-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(139,92,246,0.14) 0%, transparent 65%)' }} />
-        <svg className="absolute bottom-0 right-16 w-85 h-95 opacity-25" viewBox="0 0 280 340" fill="none">
+        <div className="absolute bottom-0 right-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(139,92,246,0.35) 0%, transparent 65%)' }} />
+        <svg className="absolute bottom-0 right-16 w-85 h-95 opacity-50" viewBox="0 0 280 340" fill="none">
           <line x1="140" y1="340" x2="140" y2="255" stroke="#8b5cf6" strokeWidth="1.5"/>
           <line x1="116" y1="340" x2="164" y2="340" stroke="#8b5cf6" strokeWidth="1.5"/>
           <line x1="124" y1="340" x2="112" y2="316" stroke="#7c3aed" strokeWidth="1"/>
