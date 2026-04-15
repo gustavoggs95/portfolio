@@ -1,5 +1,6 @@
 import { Briefcase, GraduationCap, Calendar, MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
+import coforgeLogo from '../assets/coforge-logo.png'
 import globantLogo from '../assets/globant-logo.png'
 import ibmLogo from '../assets/ibm-logo.png'
 
@@ -16,23 +17,6 @@ interface ExperienceItem {
 }
 
 const experiences: ExperienceItem[] = [
-  {
-    type: 'work',
-    title: 'Fullstack Developer',
-    company: 'Globant',
-    location: 'São Paulo, Brazil',
-    period: 'Jan 2021 - Present',
-    description: [
-      'Maintain and develop new features for Web/Mobile applications using React, React Native and Node.js',
-      'Design user interfaces using CSS/HTML best practices',
-      'Develop and integrate AWS serverless solutions',
-      'Integrate data from back-end services and databases using GraphQL',
-      'Collaborate with Project Owners to understand and discuss requirements',
-    ],
-    logo: globantLogo,
-    accent: 'from-emerald-400/20 via-secondary/10 to-transparent',
-    glow: 'bg-emerald-400/25',
-  },
   {
     type: 'work',
     title: 'Mobile Application Developer',
@@ -66,14 +50,38 @@ const experiences: ExperienceItem[] = [
     glow: 'bg-fuchsia-500/25',
   },
   {
-    type: 'education',
-    title: "Associate's Degree",
-    company: 'FATEC de Americana',
+    type: 'work',
+    title: 'Fullstack Developer',
+    company: 'Globant',
     location: 'São Paulo, Brazil',
-    period: '2013 - 2016',
-    description: ['Systems Analysis and Development'],
-    accent: 'from-amber-300/20 via-secondary/10 to-transparent',
-    glow: 'bg-amber-300/25',
+    period: 'Jan 2021 - Mar 2026',
+    description: [
+      'Maintain and develop new features for Web/Mobile applications using React, React Native and Node.js',
+      'Design user interfaces using CSS/HTML best practices',
+      'Develop and integrate AWS serverless solutions',
+      'Integrate data from back-end services and databases using GraphQL',
+      'Collaborate with Project Owners to understand and discuss requirements',
+    ],
+    logo: globantLogo,
+    accent: 'from-emerald-400/20 via-secondary/10 to-transparent',
+    glow: 'bg-emerald-400/25',
+  },
+  {
+    type: 'work',
+    title: 'Senior Back End Developer',
+    company: 'Coforge',
+    location: 'São Paulo - Brazil',
+    period: 'Mar 2026 - Present',
+    description: [
+      'Develop and evolve back-end solutions in Node.js for product initiatives',
+      'Build robust, secure, and scalable endpoints and APIs',
+      'Integrate and operate services with Cloudflare',
+      'Implement AI-based features to optimize workflows and data processing',
+      'Deliver product value through reliable and scalable back-end architecture',
+    ],
+    logo: coforgeLogo,
+    accent: 'from-cyan-400/20 via-secondary/10 to-transparent',
+    glow: 'bg-cyan-400/25',
   },
 ]
 
@@ -309,11 +317,11 @@ export function Experience() {
         >
           <h2 className="text-4xl font-bold text-center mb-4">
             <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Experience & Education
+              Experience
             </span>
           </h2>
           <p className="text-text-muted text-center mb-16 max-w-2xl mx-auto">
-            My professional journey and educational background
+            My professional journey in software development
           </p>
         </motion.div>
 
