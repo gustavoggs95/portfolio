@@ -19,22 +19,6 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     type: 'work',
-    title: 'Mobile Application Developer',
-    company: 'IBM',
-    location: 'São Paulo, Brazil',
-    period: 'Dec 2018 - Jan 2021',
-    description: [
-      'Developed and maintained Android and iOS applications using React Native',
-      'Designed user interfaces following CSS/HTML practices',
-      'Integrated data from back-end services and databases using REST API',
-      'Worked closely with Project Owners on requirements',
-    ],
-    logo: ibmLogo,
-    accent: 'from-sky-400/20 via-primary/10 to-transparent',
-    glow: 'bg-sky-400/25',
-  },
-  {
-    type: 'work',
     title: 'Web Developer',
     company: 'IBM',
     location: 'São Paulo, Brazil',
@@ -48,6 +32,22 @@ const experiences: ExperienceItem[] = [
     logo: ibmLogo,
     accent: 'from-fuchsia-500/20 via-primary/10 to-transparent',
     glow: 'bg-fuchsia-500/25',
+  },
+  {
+    type: 'work',
+    title: 'Mobile Application Developer',
+    company: 'IBM',
+    location: 'São Paulo, Brazil',
+    period: 'Dec 2018 - Jan 2021',
+    description: [
+      'Developed and maintained Android and iOS applications using React Native',
+      'Designed user interfaces following CSS/HTML practices',
+      'Integrated data from back-end services and databases using REST API',
+      'Worked closely with Project Owners on requirements',
+    ],
+    logo: ibmLogo,
+    accent: 'from-sky-400/20 via-primary/10 to-transparent',
+    glow: 'bg-sky-400/25',
   },
   {
     type: 'work',
