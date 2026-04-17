@@ -65,39 +65,81 @@ const projects: Project[] = [
 export function Projects() {
   return (
     <section id="projects" className="py-24 bg-dark-light/50 relative overflow-hidden">
-      {/* Browser window wireframes */}
+      {/* Signal map background */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-fuchsia-400/50 to-transparent" />
-        <div className="absolute top-0 left-0 w-96 h-80" style={{ background: 'radial-gradient(ellipse at 0% 0%, rgba(217,70,239,0.12) 0%, transparent 65%)' }} />
-        <svg className="absolute top-4 left-0 w-100 h-70 opacity-15" viewBox="0 0 400 280" fill="none">
-          <rect x="1" y="1" width="398" height="278" rx="10" stroke="#94a3b8" strokeWidth="1.5"/>
-          <line x1="1" y1="36" x2="399" y2="36" stroke="#64748b" strokeWidth="1"/>
-          <circle cx="18" cy="19" r="5.5" stroke="#f87171" strokeWidth="1"/>
-          <circle cx="32" cy="19" r="5.5" stroke="#fbbf24" strokeWidth="1"/>
-          <circle cx="46" cy="19" r="5.5" stroke="#4ade80" strokeWidth="1"/>
-          <rect x="64" y="11" width="210" height="14" rx="7" stroke="#475569" strokeWidth="1"/>
-          <rect x="14" y="52" width="100" height="10" rx="2" stroke="#94a3b8" strokeWidth="0.7"/>
-          <rect x="14" y="70" width="360" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
-          <rect x="14" y="83" width="300" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
-          <rect x="14" y="102" width="174" height="110" rx="4" stroke="#475569" strokeWidth="0.7"/>
-          <rect x="198" y="102" width="174" height="110" rx="4" stroke="#475569" strokeWidth="0.7"/>
-          <rect x="14" y="224" width="360" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
-          <rect x="14" y="238" width="220" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
-          <rect x="14" y="254" width="160" height="7" rx="2" stroke="#64748b" strokeWidth="0.7"/>
+        <div className="absolute inset-0 bg-linear-to-b from-dark via-dark-light/70 to-dark" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(217,70,239,0.16),transparent_22%),radial-gradient(circle_at_82%_28%,rgba(34,211,238,0.12),transparent_20%),radial-gradient(circle_at_50%_78%,rgba(99,102,241,0.14),transparent_26%)]" />
+        <svg
+          className="absolute inset-0 h-full w-full opacity-[0.22]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 900"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            <linearGradient id="projects-flow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.7" />
+              <stop offset="50%" stopColor="#d946ef" stopOpacity="0.45" />
+              <stop offset="100%" stopColor="#818cf8" stopOpacity="0.6" />
+            </linearGradient>
+            <pattern id="projects-grid" width="72" height="72" patternUnits="userSpaceOnUse">
+              <path d="M 72 0 L 0 0 0 72" fill="none" stroke="#475569" strokeWidth="1" opacity="0.32" />
+              <circle cx="0" cy="0" r="1.5" fill="#64748b" opacity="0.45" />
+            </pattern>
+          </defs>
+
+          <rect width="100%" height="100%" fill="url(#projects-grid)" />
+
+          <path
+            d="M-40 210 C180 100, 280 320, 470 250 S820 90, 1010 210 S1320 410, 1490 280"
+            fill="none"
+            stroke="url(#projects-flow)"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeDasharray="6 14"
+          />
+          <path
+            d="M-20 580 C170 460, 290 690, 520 600 S840 420, 1040 520 S1310 760, 1490 640"
+            fill="none"
+            stroke="url(#projects-flow)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeDasharray="10 16"
+            opacity="0.85"
+          />
+          <path
+            d="M210 0 C280 140, 360 240, 540 280 S830 350, 940 520 S1020 810, 1180 940"
+            fill="none"
+            stroke="url(#projects-flow)"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeDasharray="4 12"
+            opacity="0.8"
+          />
+
+          <g fill="#22d3ee">
+            <circle cx="226.25" cy="215" r="3.5" />
+            <circle cx="470" cy="250" r="4" />
+            <circle cx="740" cy="158.75" r="3.5" />
+            <circle cx="1010" cy="210" r="4" />
+            <circle cx="1257.5" cy="338.75" r="3.5" />
+          </g>
+          <g fill="#d946ef">
+            <circle cx="235" cy="578.75" r="3.5" />
+            <circle cx="520" cy="600" r="4" />
+            <circle cx="791.25" cy="488.75" r="3.5" />
+            <circle cx="1040" cy="520" r="4" />
+            <circle cx="1272.5" cy="662.5" r="3.5" />
+          </g>
+          <g fill="#818cf8">
+            <circle cx="333.75" cy="177.5" r="3.25" />
+            <circle cx="540" cy="280" r="3.5" />
+            <circle cx="766.25" cy="351.25" r="3.25" />
+            <circle cx="940" cy="520" r="3.5" />
+            <circle cx="1041.25" cy="745" r="3.25" />
+          </g>
         </svg>
-        <svg className="absolute top-52 left-8 w-85 h-60 opacity-20" viewBox="0 0 340 240" fill="none">
-          <rect x="1" y="1" width="338" height="238" rx="10" stroke="#d946ef" strokeWidth="1.5"/>
-          <line x1="1" y1="32" x2="339" y2="32" stroke="#a855f7" strokeWidth="1"/>
-          <circle cx="15" cy="17" r="5" stroke="#f87171" strokeWidth="1"/>
-          <circle cx="28" cy="17" r="5" stroke="#fbbf24" strokeWidth="1"/>
-          <circle cx="41" cy="17" r="5" stroke="#4ade80" strokeWidth="1"/>
-          <rect x="58" y="10" width="180" height="14" rx="7" stroke="#7c3aed" strokeWidth="1"/>
-          <rect x="14" y="46" width="80" height="9" rx="2" stroke="#c026d3" strokeWidth="0.7"/>
-          <rect x="14" y="63" width="300" height="7" rx="2" stroke="#a855f7" strokeWidth="0.7"/>
-          <rect x="14" y="78" width="240" height="7" rx="2" stroke="#a855f7" strokeWidth="0.7"/>
-          <rect x="14" y="100" width="300" height="100" rx="4" stroke="#7c3aed" strokeWidth="0.7"/>
-          <rect x="14" y="212" width="180" height="7" rx="2" stroke="#a855f7" strokeWidth="0.7"/>
-        </svg>
+        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-cyan-400/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-fuchsia-400/45 to-transparent" />
       </div>
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -142,17 +184,20 @@ export function Projects() {
                 </div>
 
                 <div className="relative h-64 flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(15,23,42,0.18)_42%,rgba(15,23,42,0.78)),linear-gradient(120deg,rgba(217,70,239,0.09),transparent_30%,transparent_70%,rgba(34,211,238,0.08))]" />
+                  <div className="absolute inset-0 opacity-25 bg-[repeating-linear-gradient(135deg,rgba(148,163,184,0.07)_0_1px,transparent_1px_18px)]" />
+                  <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.04)_0_1px,transparent_1px_24px)]" />
                   {project.customIcon ? (
                     <img
                       src={project.customIcon}
                       alt={project.title}
-                      className="w-auto h-32 group-hover:scale-110 transition-transform duration-300"
+                      className="relative z-10 w-auto h-32 drop-shadow-[0_0_28px_rgba(217,70,239,0.28)] group-hover:scale-110 transition-transform duration-300"
                     />
                   ) : (
                     project.icon && (
                       <project.icon
                         size={80}
-                        className="text-white/80 group-hover:scale-110 transition-transform duration-300"
+                        className="relative z-10 text-white/80 drop-shadow-[0_0_24px_rgba(34,211,238,0.22)] group-hover:scale-110 transition-transform duration-300"
                       />
                     )
                   )}

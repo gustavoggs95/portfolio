@@ -116,9 +116,9 @@ export function Hero() {
           >
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black uppercase leading-none mb-6">
-                <span className="text-white">FULL STACK</span>
+                <span className="text-white/25">FULL STACK</span>
                 <br />
-                <span className="text-white/20">DEVELOPER</span>
+                <span className="text-white">DEVELOPER</span>
               </h1>
               <p className="text-text-muted text-base md:text-lg max-w-2xl">
                 Passionate about creating intuitive and engaging user experiences. Specialized in
